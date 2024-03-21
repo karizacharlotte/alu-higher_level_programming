@@ -1,2 +1,2 @@
--- script to create the database htn_Oc-O IN My SQL sever
+-- Script to create the database hbtn_Oc-O in MySQL sever
 CREATE DATABASE IF NOT EXISTS hbtn_Oc_O;
