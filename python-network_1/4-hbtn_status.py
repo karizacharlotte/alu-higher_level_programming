@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Fetches URL status and displays response"""
+"""Documented now"""
 import requests
 
-if __name__ == "__main__":
-    url = "https://alu-intranet.hbtn.io/status"
-    resp = requests.get(url)
+if __name__ == '__main__':
+    response = requests.get("https://intranet.hbtn.io/status")
     print("Body response:")
-    print("\t- type: {}".format(type(resp.text)))
-    print("\t- content: {}".format(resp.text))
+    print("\t- type: {}".format(type(response.text)))
+    print("\t- content: {}".format(response.text))
