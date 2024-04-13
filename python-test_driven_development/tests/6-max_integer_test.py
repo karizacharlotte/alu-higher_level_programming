@@ -1,28 +1,27 @@
 #!/usr/bin/python3
-"""unit testing module for 6-max_integer_test.py
+"""Unittest for max_integer([..])
 """
+
 import unittest
-max_int = __import__('6-max_integer').max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """
-    class for testing 6-max_integer_test.py
-    """
+    """contains test functions for max_integer function"""
 
-    def test_max_integer(self):
-        """ test case for normal list of integers w/o negatives
-        """
-        test_list = [1, 2, 3, 8, 4]
-        self.assertEqual(max_int(test_list), 8)
+    def test_area(self):
+        """tests successful cases of max_integer"""
+        self.assertEqual(max_integer([1, 2]), 2)
+        self.assertEqual(max_integer([]), None)
+        self.assertEqual(max_integer([1]), 1)
+        self.assertEqual(max_integer([1, 1, 3, 3, 3, 6, 8, 8]), 8)
+        self.assertEqual(max_integer([-1, -2, -3]), -1)
+        self.assertEqual(max_integer([1, 2, 3, 4, 3, 2, 1]), 4)
 
-    def test_max_integer_neg(self):
-        """ test case for normal list of integers w/ negatives
-        """
-        test_list = [1, 2, 3, 8, 4, -40, -400, -12, 0]
-        self.assertEqual(max_int(test_list), 8)
+    def test_errors(self):
+        """tests errors raised by incorrect type arguments"""
+        self.assertRaises(Exception, max_integer, ["string", 1.73, 25, {2}])
 
-    def test_max_integer_(self):
-        """ test case for empty list
-        """
-        self.assertEqual(max_int([]), None)
+    def test_empty(self):
+        """tests errors if argument is none"""
+        self.assertIsNone(max_integer())
